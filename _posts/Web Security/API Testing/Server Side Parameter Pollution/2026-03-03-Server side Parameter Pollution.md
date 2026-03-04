@@ -1,7 +1,7 @@
 ---
 title: Server-side parameter pollution (SSPP)
-description: API Testing -> Server-side parameter pollution
-categories: [Web Security, API Testing]
+description: 시스템이 내부적으로 사용하는 API 취약점
+categories: [Web Security, API Testing, ]
 tags: [웹 보안]
 pin: true
 math: true
@@ -41,7 +41,6 @@ SSPP를 통해 공격자는:
 4. 비공개 데이터 접근
 
 등이 가능하다.
-
 예시를 통해 알아보자. 
 
 ## 1. Query Truncation (잘라내기 공격)
@@ -167,4 +166,5 @@ Query builder 또는 Parameterized 방식 사용
 특수 문자 (`#`,`&`,`=`) 필터링
 
 ## BurpSuite 예제
-Lab #1: Exploiting server-side parameter pollution in a query string (coming soon)
+
+Lab #1: [**Exploiting server-side parameter pollution in a query string**]({{ site.baseurl }}lab/SSPP-Lab1/)
