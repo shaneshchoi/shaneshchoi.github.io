@@ -167,4 +167,4 @@ Query builder 또는 Parameterized 방식 사용
 
 ## BurpSuite 예제
 
-Lab #1: [**Exploiting server-side parameter pollution in a query string**]({{ site.baseurl }}lab/SSPP-Lab1/)
+Lab #1: [**Exploiting server-side parameter pollution in a query string**]({{ site.baseurl }}/lab/SSPP-Lab1/)
