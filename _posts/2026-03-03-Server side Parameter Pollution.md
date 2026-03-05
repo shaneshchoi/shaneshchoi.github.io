@@ -1,7 +1,7 @@
 ---
 title: Server-side parameter pollution (SSPP)
 description: 시스템이 내부적으로 사용하는 API 취약점
-categories: [Web Security, API Testing, ]
+categories: [Web Security, API Testing]
 tags: [웹 보안]
 pin: true
 math: true
@@ -43,6 +43,8 @@ SSPP를 통해 공격자는:
 등이 가능하다.
 예시를 통해 알아보자. 
 
+---
+
 ## 1. Query Truncation (잘라내기 공격)
 
 '#' 문자는 URL Fragment를 의미한다.
@@ -71,6 +73,7 @@ GET /users/search?name=shane#foo&publicProfile=true
 2. 비공개 계정이 반환되었는지
 3. 응답 길이의 변화가 있었는지
 
+---
 
 ## 2. Injecting New Parameters
 
@@ -92,6 +95,7 @@ GET /users/search?name=shane&foo=xyz&publicProfile=true
 2. 에러가 발생할 경우 - 파라미터 처리됨
 3. 응답 (Response) 구조가 바뀌었을 경우 - 영향 있음
 
+---
 
 ## 3. Injecting Valid(Hidden) Parameters
 
@@ -108,6 +112,8 @@ GET /users/search?name=shane&email=foo&publicProfile=true
 ```
 
 이런 식으로, 없던 `email` 파라미터를 추가해 검색 로직이 바뀔 수 있음.
+
+---
 
 ## 4. Overriding Existing Parameters
 
@@ -132,15 +138,19 @@ GET /users/search?name=shane&name=evil&publicProfile=true
 따라서 PHP 환경이라면 `evil`이 검색될 수 있다.
 이 경우, `name=administrator`를 통해 관리자 계정 접근을 시도할 수 있음.
 
+--- 
+
 ## Root cause
 
-발생 원인으로는, 백엔드 로직의 취약한 코드로, 사용자 입력을 단순 문자열 결합으로 삽입하게 될 경우에 발생한다. 
+발생 원인으로는, 백엔드 로직의 취약한 코드가 있다. 사용자 입력을 단순 문자열 결합으로 삽입하게 될 경우에 발생한다. 
 
 예시
 ```python
 internal_url = "users/search?name=" + user_input + "&publicProfile=true"
 ```
 {: file='vulnerable_logic.py'}
+
+---
 
 ## 테스트 요약 정리
 1. `%23` -> Query truncate
@@ -150,6 +160,8 @@ internal_url = "users/search?name=" + user_input + "&publicProfile=true"
 
 테스트 후에,
 - 상태 코드, 응답 길이, 에러 메시지, 데이터 변화 등을 관찰.
+
+--- 
 
 ## 방어 전략
 
@@ -164,6 +176,8 @@ Query builder 또는 Parameterized 방식 사용
 
 4. Input Validation
 특수 문자 (`#`,`&`,`=`) 필터링
+
+---
 
 ## BurpSuite 예제
 

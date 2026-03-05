@@ -9,3 +9,152 @@
 ';
 
 /* append your custom style below */
+
+/* === Terminal UI in sidebar (enhanced) === */
+#sidebar .terminal-box {
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+#sidebar .terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#sidebar .terminal-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#sidebar .terminal-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+#sidebar .terminal-header .red { background: #ff5f56; }
+#sidebar .terminal-header .yellow { background: #ffbd2e; }
+#sidebar .terminal-header .green { background: #27c93f; }
+
+#sidebar .terminal-title {
+  margin-left: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.2px;
+}
+
+#sidebar .terminal-body p { margin: 0; }
+
+#sidebar .terminal-body .cmd {
+  color: #ff8800;
+}
+
+#sidebar .terminal-body .out {
+  color: rgba(255, 255, 255, 0.78);
+  margin-left: 0; /* 출력이 살짝 안쪽으로 들어가서 휑함 감소 */
+}
+
+/* blinking cursor (force) */
+#sidebar .cursor::after {
+  content: "_";
+  display: inline-block;
+  margin-left: 2px;
+  animation: sh-terminal-blink 1s steps(1, end) infinite !important;
+}
+
+@keyframes sh-terminal-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* typing animation */
+/* ===== Terminal typing (stable + no flicker) ===== */
+
+/* 타이핑 줄 베이스라인/라인 고정 */
+#sidebar .terminal-body .cmd,
+#sidebar .terminal-body .cmd-typing {
+  margin: 0 !important;
+  line-height: 1.55 !important;
+  font-size: 12.5px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  white-space: nowrap;
+}
+
+/* whoami 타이핑: 타이핑 -> 유지 -> "통째 삭제" -> 다시 타이핑 */
+#sidebar .terminal-body .typing {
+  display: inline-block !important;
+  vertical-align: baseline !important;
+  line-height: 1.55 !important;
+  white-space: nowrap;
+  overflow: hidden;
+
+  /* whoami = 5 글자 */
+  max-width: 0;
+  opacity: 1;
+  visibility: visible;
+
+  /* 폭 타이핑 + 가시성(통째삭제) */
+  animation:
+    sh_type_width 2.8s steps(5, end) infinite,
+    sh_type_visible 2.8s linear infinite;
+
+  will-change: max-width, opacity, visibility;
+}
+
+/* 타이핑 폭: 0 -> 5ch 찍고 유지 (글자별 삭제 없음) */
+@keyframes sh_type_width {
+  0%   { max-width: 0; }
+  35%  { max-width: 5ch; }  /* 타이핑 완료 */
+  100% { max-width: 5ch; }  /* 끝까지 유지 */
+}
+
+/* 통째 삭제: 마지막 구간에만 숨김(잔상/w 플리커 제거) */
+@keyframes sh_type_visible {
+  0%   { opacity: 1; visibility: visible; }
+  80%  { opacity: 1; visibility: visible; } /* 유지 */
+  81%  { opacity: 0; visibility: hidden; }  /* 통째 삭제 */
+  100% { opacity: 0; visibility: hidden; }  /* 다음 루프 시작 전까지 숨김 */
+}
+
+/* 커서는 "마지막 줄"에서만 (타이핑 줄과 충돌 방지) */
+#sidebar .cmd-typing .cursor::after {
+  content: "" !important;
+  animation: none !important;
+}
+/* ASCII banner */
+#sidebar .ascii-banner {
+  margin: 0 0 8px;
+  padding: 0;
+  white-space: pre;
+  line-height: 1.05;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* subtle terminal glow */
+#sidebar .terminal-body .cmd {
+  text-shadow: 0 0 10px rgba(255, 136, 0, 0.18);
+}
+
+#sidebar .terminal-body .out {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.10);
+}
+
+/* optional: glow the whole box a tiny bit */
+#sidebar .terminal-box {
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.28),
+    0 0 18px rgba(255, 136, 0, 0.08);
+}
