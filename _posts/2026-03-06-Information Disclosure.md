@@ -1,5 +1,5 @@
 ---
-title: Information Disclosure
+title: Information Disclosure에 대해 알아보자
 description: 웹 애플리케이션에서 발생하는 정보 노출 취약점 정리
 categories: [Web Security, Information Disclosure]
 tags: [웹보안, 기타]
@@ -200,10 +200,15 @@ HTML 코드 안에 남겨진 개발자 주석도
 공격자 입장에서 매우 가치 있는 정보다.
 
 예:
-![설명](/assets/burp_images/information-disclosure/error_message3.png){:width="1200px"}
+
+<div class="img-left-block">
+  <img src="/assets/burp_images/information-disclosure/error_message3.png" alt="설명" width="600">
+</div>
 > 요청
 
-![설명](/assets/burp_images/information-disclosure/error_message4.png){:width="1200px"}
+<div class="img-left-block">
+  <img src="/assets/burp_images/information-disclosure/error_message4.png" alt="설명" width="600">
+</div>
 > 응답
 
 주석에 숨겨져있는 `/cgi-bin/pipinfo.php`를 통해 민감한 정보 접근 가능
@@ -248,11 +253,15 @@ Disallow: /backup
 
 공격자는 `/backup` 에 접속,  
 
-![설명](/assets/burp_images/information-disclosure/error_message5.png){:width="1200px"}
+<div class="img-left-block">
+  <img src="/assets/burp_images/information-disclosure/error_message5.png" alt="설명" width="500">
+</div>
 
 `backup/ProductTemplate.java.bak` 파일 오픈
 
-![설명](/assets/burp_images/information-disclosure/error_message6.png){:width="1200px"}
+<div class="img-left-block">
+  <img src="/assets/burp_images/information-disclosure/error_message6.png" alt="설명" width="500">
+</div>
 
 Hard coded된 Postgres DB 비밀번호 탈취
 

@@ -1,9 +1,9 @@
 ---
-title: Server-side parameter pollution (SSPP)
+title: Server-side parameter pollution (SSPP) 취약점
 description: 시스템이 내부적으로 사용하는 API 취약점
 categories: [Web Security, API Testing]
 tags: [웹 보안]
-pin: true
+pin: false
 math: true
 mermaid: true
 toc: true

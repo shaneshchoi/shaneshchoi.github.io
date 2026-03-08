@@ -263,3 +263,69 @@
   gap: 0.8rem;
   padding-top: 1rem;
 }
+
+/* 이미지 왼쪽 정렬 */
+.img-left-block {
+  display: block;
+  text-align: left;
+  clear: both;
+  margin: 1rem 0;
+}
+
+.img-left-block img {
+  display: block;
+  margin: 0;
+}
+
+
+/* Home post cards */
+.post-preview {
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-preview:hover {
+  border-left-color: #ff9d2f;
+  box-shadow: 0 10px 24px rgba(255, 157, 47, 0.08);
+  transform: translateY(-2px);
+}
+
+/* post title hover */
+.post-preview h1,
+.post-preview h2,
+.post-preview .post-title {
+  transition: color 0.2s ease;
+}
+
+.post-preview:hover h1,
+.post-preview:hover h2,
+.post-preview:hover .post-title {
+  color: #ffb357;
+}
+
+
+
+/* 오렌지 라인*/
+/* Right panel headings */
+#panel-wrapper h2,
+#panel-wrapper h3,
+#panel-wrapper .panel-heading,
+#access-lastmod h2,
+#access-tags h2 {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+#panel-wrapper h2::after,
+#panel-wrapper h3::after,
+#panel-wrapper .panel-heading::after,
+#access-lastmod h2::after,
+#access-tags h2::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin-top: 6px;
+  background: #ff9d2f;
+  border-radius: 999px;
+}

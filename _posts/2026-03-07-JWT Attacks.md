@@ -1,6 +1,6 @@
 ---
 title: JWT 공격이란 무엇일까?
-description: 
+description: JWT가 어떻게 사용되고 악용될 수 있는지 알아보자.
 categories: [Web Security, JWT]
 tags: [웹보안, JWT]
 toc: true
@@ -128,7 +128,7 @@ JWT 기반 인증 시스템의 핵심 전제는 **"토큰의 서명만 올바르
 이런 상황에서는 공격자가 토큰을 직접 조작하더라도, 서버가 이를 정상 토큰으로 받아들일수 있다.
 
 예를 들어 다음과 같은 JWT가 있다고 가정해보자.
-```JSON
+```json
 {
   "username": "Shane",
   "isAdmin": false
@@ -145,15 +145,61 @@ JWT 기반 인증 시스템의 핵심 전제는 **"토큰의 서명만 올바르
 
 ---
 
-간단한 예제:
+예제를 통해 서명 검증을 하지 않는 JWT의 취약점을 간단히 알아보자:
+
+### 예제 1
 
 ![설명](/assets/burp_images/JWT/jwt1_1.png){:width="1200px"}
 > 순서대로 *header*, *payload*, 그리고 나머지 *signature*
 
-![설명](/assets/burp_images/JWT/jwt1_2.png){:width="1200px"}
+<div class="img-left-block">
+  <img src="/assets/burp_images/JWT/jwt1_2.png" alt="설명" width="400">
+</div>
 
 *payload* 부분을 Base64로 decode해보면, `"sub":"shane"` 으로 디코딩된걸 확인 할 수 있다.
 만약 서버가 서명 검증 단계에서 차단하지 않고 *payload*값을 그대로 사용한다면, `"sub":"administrator"` 혹은 `"sub":"admin"` 등으로 바꾸는 것만으로도 권한 상승이 가능해진다. 
+
+---
+
+### 예제 2
+
+<div class="img-left-block">
+  <img src="/assets/burp_images/JWT/jwt1_3.png" alt="설명" width="400">
+</div>
+<div class="img-left-block">
+  <img src="/assets/burp_images/JWT/jwt1_4.png" alt="설명" width="400">
+</div>
+
+`"sub":"administrator"`로 변경했지만 여전히 `401 unauthorized` 응답을 반환.
+
+이번에는 JWT의 *header*를 조작 해보자.
+
+<div class="img-left-block">
+  <img src="/assets/burp_images/JWT/jwt1_5.png" alt="설명" width="400">
+</div>
+
+`"alg": "RS256"`을 사용중인걸 볼 수 있는데, 해당 값을 `"none"`으로 수정.
+
+```json
+{
+    "alg": "none"
+}
+```
+> 여기서 `alg: none`은 **"이 토큰은 서명이 없는 JWT"** 라는 의미.
+
+정상적으로 구현된 서버는 이런 토큰을 거부해야 하나, 취약할 경우 서명 검증을 건너 뛰게끔 설정되어있을 수 있다.  
+예시:
+```
+if (alg == none)
+    skip signature verification
+```
+
+`alg: none`으로 설정할 경우, *signature*가 존재하면 안되기 때문에 JWT의 구성인 *header.payload.signature*에서 *signature*를 제외한  
+*header.payload.*만 전송하도록 한다. **JWT 형식을 유지하기 위해서 마지막 `.`은 남겨야함** 
+
+따라서, 다음과 같은 요청을 전송하게 된다
+![설명](/assets/burp_images/JWT/jwt1_6.png){:width="1200px"}
+
 
 ---
 
