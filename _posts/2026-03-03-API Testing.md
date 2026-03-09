@@ -2,7 +2,7 @@
 title: API Testing 방법 및 방어
 description: API의 공격 표면과 주요 취약점 정리
 categories: [Web Security, API Testing]
-tags: [웹보안, API]
+tags: [웹 보안, API]
 pin: false
 toc: true
 ---
@@ -338,3 +338,7 @@ Spring, Rails, Express, Django 등
 
 Lab #1: [**Exploiting an API endpoint using documentation**]({% post_url 2026-03-04-API Testing-Lab1 %})  
 Lab #2: [**Finding and exploiting an unused API endpoint**]({% post_url 2026-03-05-API Testing-Lab2 %})
+
+---
+
+출처: [PortSwigger Academy](https://portswigger.net/web-security/api-testing)

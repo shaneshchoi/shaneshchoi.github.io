@@ -2,7 +2,7 @@
 title: JWT 공격이란 무엇일까?
 description: JWT가 어떻게 사용되고 악용될 수 있는지 알아보자.
 categories: [Web Security, JWT]
-tags: [웹보안, JWT]
+tags: [웹 보안, JWT]
 toc: true
 ---
 
@@ -214,3 +214,7 @@ JWT 공격은 단순히 토큰을 수정하는 것에서 끝나지 않는다.
 등이 있다.
 
 다음 글에서는 실제로 JWT 검증이 잘못 구현된 경우 어떻게 인증을 우회할 수 있는지를 하나씩 살펴보려고 한다.
+
+---
+
+출처: [PortSwigger Academy](https://portswigger.net/web-security/jwt)

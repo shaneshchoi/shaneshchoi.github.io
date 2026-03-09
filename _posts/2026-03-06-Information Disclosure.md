@@ -2,7 +2,7 @@
 title: Information Disclosure에 대해 알아보자
 description: 웹 애플리케이션에서 발생하는 정보 노출 취약점 정리
 categories: [Web Security, Information Disclosure]
-tags: [웹보안, 기타]
+tags: [웹 보안, 기타]
 toc: true
 ---
 
@@ -423,3 +423,6 @@ old_config.zip
 사용하지 않는 기능이나 옵션은 비활성화하는 것이
 정보 노출 위험을 줄이는 데 도움이 된다.
 
+---
+
+출처: [PortSwigger Academy](https://portswigger.net/web-security/information-disclosure)

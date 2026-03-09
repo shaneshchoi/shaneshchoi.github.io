@@ -182,3 +182,7 @@ Query builder 또는 Parameterized 방식 사용
 ## BurpSuite 예제
 
 Lab #1: [**Exploiting server-side parameter pollution in a query string**]({% post_url 2026-03-03-SSPP-Lab1 %})
+
+---
+
+출처: [PortSwigger Academy](https://portswigger.net/web-security/api-testing/server-side-parameter-pollution)

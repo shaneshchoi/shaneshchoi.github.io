@@ -1,5 +1,5 @@
 ---
-title: API Testing 02 - Finding and exploiting an unused API endpoint
+title: API Testing 실습(2) - Finding and exploiting an unused API endpoint
 description: 사용되지 않는 API endpoint를 이용해 가격을 조작해보자.
 categories: [Web Security, API Testing, Lab]
 tags: [웹 보안, 실습]
@@ -11,6 +11,8 @@ toc: true
 ---
 
 # Lab: Finding and exploiting an unused API endpoint
+
+Lab Link: [Finding and exploiting an unused API endpoint](https://portswigger.net/web-security/api-testing/lab-exploiting-unused-api-endpoint)
 
 ## Lab 개요
 
