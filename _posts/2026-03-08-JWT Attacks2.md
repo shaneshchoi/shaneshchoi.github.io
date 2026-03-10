@@ -1,5 +1,5 @@
 ---
-title: JWT 취약점과 공격 방식
+title: JWT 취약점과 공격 방식 (1)
 description: JWT 기반 인증에서 발생할 수 있는 주요 취약점과 공격 방식들을 정리한다.
 categories: [Web Security, JWT]
 tags: [웹 보안, JWT, PortSwigger]
@@ -69,6 +69,8 @@ hashcat은
 
 Lab: [**JWT authentication bypass via weak signing key**]({% post_url 2026-03-08-Hashcat-Lab %})
 
+---
+
 ## JWT Header Parameter Injection
 
 JWT header에는 `alg` 외에도 여러 파라미터가 존재할 수 있다.  
@@ -79,7 +81,7 @@ ex: `jwk`, `jku`, `kid`.
 문제는 이 값들이 토큰 내부에 존재하는 사용자 입력 데이터 (User input data)라는 점.  
 즉 공격자가 이 값을 조작할 수 있다.
 
-### jwk 파라미터를 통한 injection
+### 1. jwk 파라미터를 통한 injection
 
 **JWK (JSON Web Key)**는 암호화 키를 JSON 형태로 표현하는 표준 형식이다.
 JWT에서는 `jwk` 헤더를 통해 서명을 검증할 때 사용할 **공개키(Public key)**를 토큰 내부에 포함시킬 수 있다.
@@ -140,6 +142,86 @@ JWT가 `RS256`과 같은 **비대칭키(Asymmetric key)**기반 알고리즘을 
 #### BurpSuite 예제
 
 Lab: [**JWT authentication bypass via jwk header injection**]({% post_url 2026-03-08-jwk header injection-Lab %})
+
+---
+
+### 2. jku 파라미터를 통한 injection 
+
+`jwk`와 유사하게, JWT header에는 `jku`, (JSON Web Key Set URL)라는 파라미터가 존재할 수 있다.  
+이 값은 서버가 JWT 서명을 검증할 때 사용할 **공개키 목록(JWK Set)**을 어디에서 가져올지 알려주는 역할을 한다.
+
+`jwk`가 JWT 내부에 직접 공개키를 포함시키는 방식이라면, `jku`는 **외부 URL**에서 공개키를 가져오는 방식이라고 볼 수 있다.
+
+예시:
+
+```json
+{
+  "alg": "RS256",
+  "jku": "https://example.com/jwks.json",
+  "kid": "75d0ef47-af89-47a9-9061-7c02a610d5ab"
+}
+```
+
+서버는 JWT를 검증할 때 다음과 같은 과정을 수행한다.  
+1. JWT header의 `jku`값을 확인
+2. 해당 URL로 요청을 보내 **JWK Set**을 가져옴
+3. `kid`값에 해당하는 공개키를 찾음
+4. 해당 공개키로 JWT 서명을 검증
+
+**JWK Set**은 여러 공개키를 포함하며, JSON 구조로 되어있다.
+
+**JWK Set**예시:
+```json
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "kid": "75d0ef47-af89-47a9-9061-7c02a610d5ab",
+      "n": "o-yy1wpYmffgXBxhAUJzHHocCuJolwDqql75ZWuCQ_cb33K2vh9mk6GPM9gNN4Y_qTVX67WhsN3JvaFYw-fhvsWQ"
+    },
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "kid": "d8fDFo-fS9-faS14a9-ASf99sa-7c1Ad5abA",
+      "n": "fc3f-yy1wpYmffgXBxhAUJzHql79gNNQ_cb33HocCuJolwDqmk6GPM4Y_qTVX67WhsN3JvaFYw-dfg6DH-asAScw"
+    }
+  ]
+}
+```
+
+이러한 **JWK Set**은 `/.well-known/jwks.json` 같은 endpoint에서 제공되는 경우가 많다.  
+여기서 `/.well-known/`은 웹에서 표준화된 메타데이터 경로로 자주 쓰이는 디렉터리이다.
+
+반드시 이 경로여야 하는 건 아니지만,  
+OAuth, OpenID Connect, JWT 관련 구현에서 관례적으로 많이 사용되는것으로 알려져있다.
+
+또한 public key로는 검증 용도로만 사용되기 때문에 `jwks.json` endpoint가 공개되어 있는 것 자체는 문제가 되지 않는다.  
+문제는 서버가 **아무 URL에서나 공개키를 가져오도록 허용**할 때 발생한다.
+
+정상:  
+서버는 자기 서비스나 신뢰된 인증 서버의 **jwks.json**만 허용  
+
+취약:  
+서버가 JWT header의 `jku`값을 그대로 참조하여 공격자가 지정한 URL의 **jwks.json**을 그대로 가져옴
+
+즉, `trusted-auth.com/.well-known/jwks.json`만 허용해야하는데, 공격자가 `attacker.com/jwks.json`으로 대체해도 서버가 그대로 받아 올 수 있다는 점이다.
+
+공격 과정은 다음과 같다.  
+1. 공격자가 **RSA key pair**를 생성
+2. 공격자의 서버에 **JWK Set(attacker.com/jwks.json)** 업로드
+3. JWT header의 `jku` 값을 공격자의 서버로 변경
+4. 공격자의 **개인키(private key)**로 JWT 서명
+5. 서버로 JWT 전송
+
+이때 취약한 서버는 `jku` URL에서 가져온 공개키로 서명을 검증 하게 되므로,  
+공격자가 만든 JWT도 정상 토큰으로 인식하게 된다.
+
+---
+
+### BurpSuite 예제
+
+(coming soon)
 
 ---
 
