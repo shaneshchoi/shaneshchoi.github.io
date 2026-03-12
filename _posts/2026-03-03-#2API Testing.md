@@ -336,8 +336,8 @@ Spring, Rails, Express, Django 등
 
 ## BurpSuite 예제
 
-Lab #1: [**Exploiting an API endpoint using documentation**]({% post_url 2026-03-04-API Testing-Lab1 %})  
-Lab #2: [**Finding and exploiting an unused API endpoint**]({% post_url 2026-03-05-API Testing-Lab2 %})
+Lab #1: [**Exploiting an API endpoint using documentation**]({% post_url 2026-03-04-#5API Testing-Lab1 %})  
+Lab #2: [**Finding and exploiting an unused API endpoint**]({% post_url 2026-03-05-#6API Testing-Lab2 %})
 
 ---
 
