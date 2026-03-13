@@ -209,6 +209,10 @@ Password 기반 인증은 가장 널리 사용되는 인증 방식이지만, 그
 
 결론적으로, 안전한 인증 시스템은 단순히 비밀번호를 검증하는 것에 그치지 않고, 공격자가 계정 존재 여부나 인증 실패 원인을 추론할 수 없도록 설계되어야 한다. 그렇지 않으면 자동화된 공격을 통해 인증 우회나 계정 탈취가 현실적인 위협이 될 수 있다.
 
+#### BurpSuite 예제
+
+Lab: [**Username enumeration via response timing**]({% post_url 2026-03-12-#17username enumeration2-Lab %})
+
 ---
 
 출처: [PortSwigger Acedemy](https://portswigger.net/web-security/authentication/password-based)
