@@ -151,7 +151,8 @@ Account locked
 
 #### BurpSuite 예제
 
-Lab: [**Broken brute-force protection, IP block**]({% post_url 2026-03-13-#19username enumeration3-Lab %})
+Lab #1: [**Broken brute-force protection, IP block**]({% post_url 2026-03-13-#19username enumeration3-Lab %})
+Lab #2: [**Username enumeration via account lock**]({% post_url 2026-03-13-#20username enumeration4-Lab %})
 
 ---
 
