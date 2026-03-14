@@ -1,5 +1,5 @@
 ---
-title: Authentication 실습(2) - Username enumeration via response timing
+title: Authentication 실습(2) - Username enumeration via response (PortSwigger Academy)
 description: 로그인 응답 시간 차이를 이용해 유효한 username을 식별하고 brute-force 공격으로 계정을 탈취하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
 tags: [웹 보안, 실습]

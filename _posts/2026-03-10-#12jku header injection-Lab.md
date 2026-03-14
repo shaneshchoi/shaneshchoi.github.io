@@ -1,5 +1,5 @@
 ---
-title: JWT attacks 실습(3) - JWT authentication bypass via jku header injection
+title: JWT attacks 실습(3) - JWT authentication bypass via jku header injection (PortSwigger Academy)
 description: JWT header의 jku 파라미터를 이용해 공격자의 JWK Set을 사용하도록 유도하여 관리자 권한을 획득하는 공격
 categories: [Web Security, JWT, Lab]
 tags: [웹 보안, 실습]

@@ -1,5 +1,5 @@
 ---
-title: JWT attacks 실습(4) - JWT authentication bypass via kid header path traversal
+title: JWT attacks 실습(4) - JWT authentication bypass via kid header path traversal (PortSwigger Academy)
 description: JWT header의 kid 파라미터를 이용한 path traversal 공격으로 verification key를 조작하여 관리자 권한을 획득하는 공격
 categories: [Web Security, JWT, Lab]
 tags: [웹 보안, 실습]

@@ -1,5 +1,5 @@
 ---
-title: Authentication Vulnerabilities (인증 취약점)
+title: Authentication Vulnerabilities (PortSwigger Academy) - 인증 취약점
 description: 웹 애플리케이션에서 발생하는 인증 취약점의 개념과 발생 원인에 대해 알아보자
 categories: [Web Security, Authentication Vulnerabilities]
 tags: [웹 보안, Authentication Vulnerabilities]

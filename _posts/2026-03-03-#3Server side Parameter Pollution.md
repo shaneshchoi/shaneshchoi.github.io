@@ -1,5 +1,5 @@
 ---
-title: Server-side parameter pollution (SSPP) 취약점
+title: Server-side parameter pollution (SSPP) 취약점 (PortSwigger Academy)
 description: 시스템이 내부적으로 사용하는 API 취약점
 categories: [Web Security, API Testing]
 tags: [웹 보안]

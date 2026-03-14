@@ -1,5 +1,5 @@
 ---
-title: JWT attacks 실습(2) - JWT authentication bypass via weak jwk header injection
+title: JWT attacks 실습(2) - JWT authentication bypass via weak jwk header injection (PortSwigger Academy)
 description: JWT header의 jwk 파라미터를 이용해 공격자의 공개키로 서명 검정을 우회하는 공격
 categories: [Web Security, JWT, Lab]
 tags: [웹 보안, 실습]

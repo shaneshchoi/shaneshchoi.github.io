@@ -1,5 +1,5 @@
 ---
-title: API Testing 실습(1) - Exploiting an API endpoint using documentation
+title: API Testing 실습(1) - Exploiting an API endpoint using documentation (PortSwigger Academy)
 description: Documentation을 통한 API 공격을 실습 해보자.
 categories: [Web Security, API Testing, Lab]
 tags: [웹 보안, 실습]
