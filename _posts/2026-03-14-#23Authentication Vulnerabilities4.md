@@ -116,7 +116,7 @@ password wordlist를 이용해 **offline cracking**을 수행하는 것이다.
 
 #### BurpSuite 예제
 
-Lab: [**Offline password cracking**](https://portswigger.net/web-security/authentication/other-mechanisms/lab-offline-password-cracking)
+Lab: [**Offline password cracking**]({% post_url 2026-03-14-#25Offline password cracking-Lab %})
 
 ---
 
@@ -182,7 +182,7 @@ http://vulnerable-website.com/reset-password?token=a0ba0d1cb3b63d13822572fcff1a2
 
 #### BurpSuite 예제
 
-Lab: [**Password reset broken logic**]()
+(coming soon)
 
 ### Password reset poisoning
 
