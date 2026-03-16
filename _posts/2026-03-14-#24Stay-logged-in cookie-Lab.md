@@ -81,7 +81,7 @@ wiener:51dc30ddc473d43a6011e9ebba6ca770
 > 1. 길이 (Length) - MD5 hash는 항상 128bit = 16 byte = 32 hex characters
 > 2. 문자 구성 (Hexadecimal) - MD5 hash는 일반적으로 **hex encoding**으로 표현된다. ex) 0-9, a-f
 
-정리하자면, `wiener:peter` 계정의 **stay-logged-in cookie는 이렇게 표현될 수 있다:
+정리하자면, `wiener:peter` 계정의 **stay-logged-in cookie**는 이렇게 표현될 수 있다:
 ```
 peter
 ↓ MD5

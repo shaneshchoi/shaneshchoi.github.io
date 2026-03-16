@@ -182,7 +182,7 @@ http://vulnerable-website.com/reset-password?token=a0ba0d1cb3b63d13822572fcff1a2
 
 #### BurpSuite 예제
 
-(coming soon)
+Lab: [**Password reset broken logic**]({% post_url 2026-03-15-#26Password reset logic-Lab %})
 
 ### Password reset poisoning
 
@@ -196,7 +196,7 @@ reset 링크가 동적으로 생성되는 경우 **password reset poisoning** �
 
 #### BurpSuite 예제
 
-(coming soon)
+Lab: [**Password reset poisoning via middleware**]({% post_url 2026-03-15-#27Password reset poisoning-Lab %})
 
 ---
 
@@ -226,7 +226,8 @@ reset 링크가 동적으로 생성되는 경우 **password reset poisoning** �
 
 #### BurpSuite 예제
 
-(coming soon)
+Lab: [**Password brute-force via password change**]({% post_url 2026-03-15-#28Password change brute-force-Lab %})
+
 ---
 
 출처: [PortSwigger Academy](https://portswigger.net/web-security/authentication/other-mechanisms)
