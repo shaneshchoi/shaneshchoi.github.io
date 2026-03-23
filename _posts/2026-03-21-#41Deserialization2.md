@@ -515,23 +515,76 @@ deserialize 발생 여부 확인
 
 ### BurpSuite 예제
 
-Lab:
+Lab6 : [Exploiting PHP deserialization with a pre-built gadget chain]({% post_url 2026-03-22-#47Deserialization6-Lab %})  
+
+---
+
+## 7. Gadget chain3
+
+Ysoserial, phpggc같은 툴은 유명한 gadget chain을 자동으로 생성해주지만,  
+모든 프레임워크/버전에 대해 다 지원해주는 건 아니다.
+
+예를들면,  
+- 타겟이 마이너한 프레임워크를 사용
+- 지원 툴이 없음
+- 비슷한 exploit PoC는 공개되어 있는데 자동 생성기는 없음
+
+이럴 때는 흔히 인터넷에 공개된  
+- Github PoC
+- 블로그
+- 보안 리서치
+- CVE exploit 예제
+등을 참고해서 직접 수정해야 한다.
+
+특정 프레임워크용 자동화 툴이 없어다로, 공개된 gadget chain exploit코드나 문서를 찾아서 수동으로 변형 하면 된다.
+
+| 패턴            | 의미            |
+| ------------- | ------------- |
+| `\x04\x08`    | Ruby Marshal  |
+| `O:`          | PHP           |
+| `ac ed 00 05` | Java          |
+| `gASV`        | Python pickle |
+
+### BurpSuite 예제
+
+Lab7 : [Exploiting Ruby deserialization using a documented gadget chain]({% post_url 2026-03-22-#48Deserialization7-Lab %})
 
 ---
 
 ## 정리
 
-Insecure Deserialization은  
-사용자가 조작할 수 있는 데이터를 서버가 그대로 객체로 복원할 때 발생한다.
+이번 내용을 정리하면서, 다양한 프레임워크와 내부 코드 흐름이 어떻게 취약점으로 이어질 수 있는지에 대해 보다 깊이 있게 이해할 수 있었다.  
+단순히 특정 취약점을 개별적으로 학습하는 데서 그치는 것이 아니라, 각 취약점이 실제 애플리케이션 내에서 어떻게 연결되고 악용되는지에 대한 흐름을 파악할 수 있었다.
 
-겉으로 보기에는 단순한 데이터 처리처럼 보이지만,  
-실제로는 서버 내부 객체와 기능 흐름에 직접 영향을 줄 수 있다.
+### 1. 진짜 취약점은 Gadget chain이 아니라 untrusted deserialization이다
 
-처음에는 추상적으로 느껴질 수 있는데,  
-이 취약점은 예시를 직접 보면 훨씬 이해가 쉽다.
+Gadget chain이 존재한다고 해서 그 자체가 취약점은 아니다.  
+취약점은 공격자가 제어할 수 있는 데이터를 역직렬화 (deserialization)한다는 점이다.  
+서버측에서 사용자가 보낸 데이터를 신뢰하고 객체로 복원하는 순간이 본질적인 문제다.
 
-다음 글에서는 serialized 데이터를 실제로 식별하고,  
-값과 타입을 직접 바꾸면서 어떻게 exploit 되는지 이어서 본다.
+예를들어,
+- 어떤 객체가 역직렬화 되면 `__wakeup()`실행
+- 그 안에서 다른 객체 메서드 호출
+- 그 메서드가 파일 접근
+- 또 다른 메서드를 거쳐 최종적으로 `exec()`또는 템플릿 렌더링, 파일 삭제, SSRF같은 동작 발생
+
+따라서 방어적인 관점에서는 gadget chain 단순 차단보다는,  
+데이터 검증, 안전한 포맷(JSON 등) 사용, 타입 제한, 서명 검증, allowlist적용 등을 시행함으로써 대응할 수 있겠다.
+
+### 2. 기초적인 언어/프레임워크의 이해
+
+Exploit을 만들기 위해서는 최소한 언어와 프레임워크에 대한 이해가 필요하다.
+
+예를들어,
+- 객체가 어떻게 생성되는지
+- magic method가 언제 호출되는지
+- 어떤 속성이 어떤 메서드 흐름에 영향을 주는지
+- 직렬화 (serialize)포맷이 어떤 구조인지
+- 프레임워크 내부에서 어떻게 이어지는지
+등을 생각해볼 필요가 있다.
+
+위에서 알아봤듯이 PHP에서는 `__wakeup()`, `__destruct()`, `__toString()`, `Serializable`같은 개념을 알아야 하고,  
+Java에서는 `readObject()`, `writeObject()`, `readResolve()`, transformer chain같은 개념을 알아야 한다.  
 
 ---
 
