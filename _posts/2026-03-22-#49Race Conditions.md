@@ -134,4 +134,10 @@ race condition을 어떻게 exploit하는지 단계별로 정리할 예정이다
 
 ---
 
+## BurpSuite 예제
+
+Lab : [Limit overrun race conditions]({% post_url 2026-03-23-#50Race Conditions1-Lab %})
+
+---
+
 출처: [PortSwigger Academy](https://portswigger.net/web-security/race-conditions)
