@@ -2,7 +2,7 @@
 title: Authentication 실습(3) - Broken Brute-force Protection (PortSwigger Academy)
 description: 로그인 실패 카운터 초기화 로직을 이용해 Brute-force 보호를 우회하는 공격 실습
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

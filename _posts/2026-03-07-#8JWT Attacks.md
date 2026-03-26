@@ -2,7 +2,7 @@
 title: JWT 공격이란 무엇일까? (PortSwigger Academy)
 description: JWT가 어떻게 사용되고 악용될 수 있는지 알아보자.
 categories: [Web Security, JWT]
-tags: [웹 보안, JWT]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

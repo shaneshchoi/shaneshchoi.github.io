@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(3) - Using application functionality (PortSwigger Academy)
 description: serialized object의 값을 조작해 서버 기능을 악용하여 임의 파일을 삭제하는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

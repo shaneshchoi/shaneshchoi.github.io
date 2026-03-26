@@ -2,7 +2,7 @@
 title: Authentication Vulnerabilities (PortSwigger Academy) - MFA 취약점
 description: Multi-Factor Authentication 구현에서 발생할 수 있는 취약점과 2FA 우회 방식을 정리
 categories: [Web Security, Authentication Vulnerabilities]
-tags: [웹 보안, Authentication Vulnerabilities]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

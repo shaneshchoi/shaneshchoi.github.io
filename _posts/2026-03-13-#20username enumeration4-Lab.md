@@ -2,7 +2,7 @@
 title: Authentication 실습(4) - Username enumeration via account lock (PortSwigger Academy)
 description: Account lock 기능의 로직 결함을 이용해 유효한 username을 식별하고 brute-force로 계정을 탈취하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

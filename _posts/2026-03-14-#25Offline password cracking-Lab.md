@@ -2,7 +2,7 @@
 title: Authentication 실습(7) - Offline password cracking (PortSwigger Academy)
 description: XSS 취약점을 이용해 victim의 stay-logged-in 쿠키를 탈취하고 password hash를 offline으로 크랙하여 계정을 탈취하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

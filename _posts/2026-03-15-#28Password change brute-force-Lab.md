@@ -2,7 +2,7 @@
 title: Authentication 실습(10) - Password brute-force via password change (PortSwigger Academy)
 description: Password change 기능의 로직 결함을 이용해 victim password를 brute-force하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

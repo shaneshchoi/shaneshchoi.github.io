@@ -2,7 +2,7 @@
 title: Information Disclosure에 대해 알아보자 (PortSwigger Academy)
 description: 웹 애플리케이션에서 발생하는 정보 노출 취약점 정리
 categories: [Web Security, Information Disclosure]
-tags: [웹 보안, 기타]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

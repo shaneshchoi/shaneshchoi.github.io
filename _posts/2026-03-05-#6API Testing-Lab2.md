@@ -2,7 +2,7 @@
 title: API Testing 실습(2) - Finding and exploiting an unused API endpoint (PortSwigger Academy)
 description: 사용되지 않는 API endpoint를 이용해 가격을 조작해보자.
 categories: [Web Security, API Testing, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 pin: false
 math: true
 mermaid: true

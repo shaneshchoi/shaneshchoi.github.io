@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(5) - ysoserial을 이용한 Java gadget chain 공격 (PortSwigger Academy)
 description: ysoserial을 사용하여 Java deserialization 취약점을 통해 명령어 실행까지 이어지는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

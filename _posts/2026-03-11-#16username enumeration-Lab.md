@@ -2,7 +2,7 @@
 title: Authentication 실습(1) - Username enumeration via subtly different responses (PortSwigger Academy)
 description: 로그인 실패 메시지의 미묘한 차이를 이용해 유효한 username을 식별하고 brute-force로 계정을 탈취하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

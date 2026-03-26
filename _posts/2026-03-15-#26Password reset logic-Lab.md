@@ -2,7 +2,7 @@
 title: Authentication 실습(8) - Password reset broken logic (PortSwigger Academy)
 description: Password reset 과정에서 token 검증이 제대로 이루어지지 않는 로직 결함을 이용해 다른 사용자 계정의 비밀번호를 변경하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

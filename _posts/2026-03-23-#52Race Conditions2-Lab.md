@@ -2,7 +2,7 @@
 title: Race Conditions 실습(2) - Bypassing rate limits via race conditions (PortSwigger Academy)
 description: Turbo Intruder extension을 활용한 rate limits bypass
 categories: [Web Security, Race Conditions, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: JWT attacks 실습(1) - JWT authentication bypass via weak signing key (PortSwigger Academy)
 description: Weak JWT signing key를 brute-force하여 관리자 권한을 획득하는 공격
 categories: [Web Security, JWT, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

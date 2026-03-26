@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(6) - PHPGGC를 이용한 Signed Cookie 우회 (PortSwigger Academy)
 description: Symfony framework의 gadget chain과 HMAC 서명 우회를 이용해 RCE를 발생시키는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

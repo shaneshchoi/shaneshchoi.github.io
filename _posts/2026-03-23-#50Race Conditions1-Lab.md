@@ -2,7 +2,7 @@
 title: Race Conditions 실습(1) - Limit overrun race conditions (PortSwigger Academy)
 description: 병렬 요청을 이용해 discount code를 중복 적용하여 가격을 낮추는 race condition exploit
 categories: [Web Security, Race Conditions, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

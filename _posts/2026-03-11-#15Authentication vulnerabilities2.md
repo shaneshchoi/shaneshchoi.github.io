@@ -2,7 +2,7 @@
 title: Authentication Vulnerabilities (PortSwigger Academy) - 비밀번호 기반 로그인
 description: Password 기반 로그인에서 발생할 수 있는 인증 취약점과 공격 기법
 categories: [Web Security, Authentication Vulnerabilities]
-tags: [웹 보안, Authentication Vulnerabilities]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

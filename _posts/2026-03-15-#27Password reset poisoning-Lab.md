@@ -2,7 +2,7 @@
 title: Authentication 실습(9) - Password reset poisoning via middleware (PortSwigger Academy)
 description: X-Forwarded-Host 헤더를 이용해 password reset 링크를 공격자 서버로 유도하여 victim의 reset token을 탈취하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: API Testing 방법 및 방어 (PortSwigger Academy)
 description: API의 공격 표면과 주요 취약점 정리
 categories: [Web Security, API Testing]
-tags: [웹 보안, API]
+tags: [웹 보안, PortSwigger Academy]
 pin: false
 toc: true
 ---

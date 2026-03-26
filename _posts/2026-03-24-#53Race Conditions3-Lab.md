@@ -2,7 +2,7 @@
 title: Race Conditions 실습(3) - Multi-endpoint race conditions (PortSwigger Academy)
 description: 서로 다른 endpoint를 동시에 호출하여 결제 검증과 주문 확정 사이의 race window를 악용하는 공격
 categories: [Web Security, Race Conditions, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

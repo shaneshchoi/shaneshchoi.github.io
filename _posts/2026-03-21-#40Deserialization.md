@@ -2,7 +2,7 @@
 title: Insecure Deserialization (PortSwigger Aademy) - 개념과 기본 원리 (Part 1)
 description: 직렬화와 역직렬화 개념, 그리고 Insecure Deserialization이 왜 위험한지 간단한 예시와 함께 정리
 categories: [Web Security, Deserialization]
-tags: [웹 보안, Deserialization]
+tags: [웹 보안, Deserialization, PortSwigger Academy]
 toc: true
 ---
 

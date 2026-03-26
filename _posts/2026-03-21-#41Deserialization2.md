@@ -2,7 +2,7 @@
 title: Insecure Deserialization (PortSwigger Aademy) - 취약점 분석과 공격 (Part 2)
 description: 애플리케이션 기능과 magic method를 이용해 역직렬화 취약점이 실제 공격으로 이어지는 과정 정리
 categories: [Web Security, Deserialization]
-tags: [웹 보안, Deserialization]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: Authentication 실습(6) - Brute-forcing a stay-logged-in cookie (PortSwigger Academy)
 description: Remember-me 쿠키 생성 로직을 분석한 뒤 password wordlist를 이용해 stay-logged-in 쿠키를 brute-force하여 계정에 접근하는 공격
 categories: [Web Security, Authentication Vulnerabilities, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

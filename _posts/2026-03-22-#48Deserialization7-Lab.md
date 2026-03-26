@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(7) - Ruby Gadget Chain을 이용한 RCE (PortSwigger Academy)
 description: Ruby Marshal 기반 session과 documented gadget chain을 활용하여 RCE를 발생시키는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

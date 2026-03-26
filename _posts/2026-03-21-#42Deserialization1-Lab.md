@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(1) - Modifying serialized objects (PortSwigger Academy)
 description: session cookie에 포함된 serialized object를 수정하여 admin 권한을 획득하는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: Race Conditions (PortSwigger Academy) - 개념 정리 (Part 1)
 description: Race condition의 개념과 공격 원리, TOCTOU 취약점 이해
 categories: [Web Security, Race Conditions]
-tags: [웹 보안, Race Conditions]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: Authentication Vulnerabilities (PortSwigger Academy) - 비밀번호 기반 로그인 (Part 2)
 description: Brute-force 방어 메커니즘의 설계 결함과 Account Locking이 어떻게 공격에 악용될 수 있는지 살펴본다
 categories: [Web Security, Authentication Vulnerabilities]
-tags: [웹 보안, Authentication Vulnerabilities]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: Authentication Vulnerabilities (PortSwigger Academy) - 기타 인증 메커니즘 취약점
 description: Remember-me 기능과 Password Reset/Change 과정에서 발생할 수 있는 인증 취약점 정리
 categories: [Web Security, Authentication Vulnerabilities]
-tags: [웹 보안, Authentication Vulnerabilities]
+tags: [웹 보안, PortSwigger Academy]
 toc: true
 ---
 

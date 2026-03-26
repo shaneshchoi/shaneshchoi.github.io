@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(4) - Arbitrary Object Injection in PHP (PortSwigger Academy)
 description: 임의 클래스 객체를 주입하여 magic method를 실행시키고 파일 삭제로 이어지는 공격 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 

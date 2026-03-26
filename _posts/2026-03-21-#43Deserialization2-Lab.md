@@ -2,7 +2,7 @@
 title: Insecure Deserialization 실습(2) - Modifying serialized data types (PortSwigger Academy)
 description: serialized object의 데이터 타입을 조작하여 인증을 우회하고 admin 권한을 획득하는 과정 정리
 categories: [Web Security, Deserialization, Lab]
-tags: [웹 보안, 실습]
+tags: [웹 보안, 실습, PortSwigger Academy]
 toc: true
 ---
 
