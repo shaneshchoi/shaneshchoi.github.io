@@ -269,7 +269,7 @@ www.vulnerable-website.com/reset/userId=userB&token=123456
 
 ### BurpSuite 예제
 
-Lab:
+Lab : [Exploiting time-sensitive vulnerabilities]({% post_url 2026-03-25-#55Race Conditions5-Lab %})
 
 ---
 
